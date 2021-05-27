@@ -8,6 +8,11 @@
     <title>Employees</title>
 </head>
 <body>
+    <h2>Магазин товаров</h2>
+
+    <p>
+        <a href="/Home/Index">Главная</a>
+    </p>
     <h3>Сотрудники магазина</h3>
     <hr />
     <table>
@@ -21,16 +26,16 @@
             </tr>
         </thead>
         <tbody>
-            @foreach(var emp in Model)
+            @foreach (var emp in Model)
             {
-            <tr>
-                <td>@emp.Id</td>
-                <td>@emp.LastName</td>
-                <td>@emp.FirstName</td>
-                <td>@emp.Patronymic</td>
-                <td>@emp.Age</td>
+                <tr>
+                    <td>@emp.Id</td>
+                    <td>@emp.LastName</td>
+                    <td>@emp.FirstName</td>
+                    <td>@emp.Patronymic</td>
+                    <td>@emp.Age</td>
 
-            </tr>
+                </tr>
             }
         </tbody>
 
