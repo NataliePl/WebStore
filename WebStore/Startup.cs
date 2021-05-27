@@ -22,6 +22,7 @@ namespace WebStore
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,16 +35,20 @@ namespace WebStore
 
             app.UseRouting();
 
-            var greetings = Configuration["Greetings"];
+            //var greetings = Configuration["Greetings"];
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
+                endpoints.MapGet("/greetings", async context =>
                 {
                     //await context.Response.WriteAsync(greetings);
                     await context.Response.WriteAsync(Configuration["Greetings"]);
 
                 });
+                //Добавление маршрута
+                endpoints.MapControllerRoute(
+                    "default",
+                    "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
