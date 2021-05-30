@@ -43,7 +43,12 @@
                 @Html.DisplayFor(model => model.Age)
             </dd>
         </dl>
+
+        <a asp-controller="Home" asp-action="EmployeeEdit" asp-route-id="@Model.Id">
+            Редактировать данные сотрудника
+        </a>
     </div>
+
     <div>
         @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
         <a asp-action="Employees">Назад к списку</a>

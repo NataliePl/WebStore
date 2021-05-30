@@ -37,7 +37,7 @@ namespace WebStore.Controllers
             return View(__Employees);
         }
 
-        public IActionResult EmployeeDetailes(int id)
+        public IActionResult EmployeeDetails(int id)
         {
 
             var employee = __Employees.FirstOrDefault(employee => employee.Id == id);
@@ -48,8 +48,43 @@ namespace WebStore.Controllers
             return View(employee);
         }
 
+        public IActionResult EmployeeEdit(int id)
+        {
+
+            var employee = __Employees.FirstOrDefault(employee => employee.Id == id);
+
+            if (employee == null)
+                return NotFound();
+
+            return View(employee);
+        }
+        //попытка реализовать изменение сотрудника
+        //public IActionResult EmployeeChange(int id)
+        //{
+
+        //    //var employee = __Employees.FirstOrDefault(employee => employee.Id == id);
+
+        //    //if (employee == null)
+        //    //    return NotFound();
+        //    __Employees.RemoveAt(1);
+        //    return Content("Изменения не изменены");
+        //}
         public IActionResult Blog() => View();
 
+        public IActionResult BlogSingle() => View();
 
+        public IActionResult Cart() => View();
+
+        public IActionResult Checkout() => View();
+
+        public IActionResult ContactUs() => View();
+
+        public IActionResult Login() => View();
+
+        public IActionResult ProductDetails() => View();
+
+        public IActionResult Shop() => View();
+
+        public IActionResult NotFound() => View();
     }
 }
