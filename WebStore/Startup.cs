@@ -33,6 +33,10 @@ namespace WebStore
                 app.UseDeveloperExceptionPage();
             }
 
+            //элемент конвеера обработки вход€щего запроса, который анализирует каждый вход€щий запрос, анализиру€ соответствие статическому содержимому - будет отдавать этот файл
+            app.UseStaticFiles();
+
+
             app.UseRouting();
 
             //var greetings = Configuration["Greetings"];
